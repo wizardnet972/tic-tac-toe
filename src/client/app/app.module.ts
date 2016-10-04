@@ -6,9 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
-import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
-import { AuthNgrxModule } from './auth-ngrx/auth-ngrx.module';
 import { SharedModule } from './shared/shared.module';
 
 import { StoreModule } from '@ngrx/store';
@@ -22,10 +19,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    AboutModule,
-    HomeModule,
 
-    AuthNgrxModule,
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),

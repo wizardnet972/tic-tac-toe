@@ -8,7 +8,7 @@ import './operators';
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-app',
+  selector: 'tic-tac-toe-app',
   templateUrl: 'app.component.html',
 })
 
