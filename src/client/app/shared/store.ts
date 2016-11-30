@@ -4,13 +4,13 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 import * as fromRouter from '@ngrx/router-store';
-import * as fromTicTacToe from '../tic-tac-toe/index';
+import * as fromApp from '../app.store';
 
-export interface State extends fromTicTacToe.State {
+export interface State extends fromApp.State {
   router: fromRouter.RouterState;
 }
 
-const reducers = Object.assign({}, fromTicTacToe.reducers, {
+const reducers = Object.assign({}, fromApp.reducers, {
   router: fromRouter.routerReducer,
 });
 
@@ -18,7 +18,7 @@ const developmentReducer = compose(storeFreeze, storeLogger(), combineReducers)(
 const productionReducer = combineReducers(reducers);
 
 export function rootReducer(state: any, action: any) {
-  if (String('<%= ENV %>') === 'prod') {
+  if (String('<%= BUILD_TYPE %>') === 'prod') {
     return productionReducer(state, action);
   } else {
     return developmentReducer(state, action);
@@ -31,12 +31,12 @@ export const reducer = (state: any, action: any) => {
   let oldRouter: fromRouter.RouterState | null = null;
 
   if (action.type === 'RESET_STORE') {
-    oldRouter = state.router;
+    //oldRouter = state.router;
     state = undefined;
   }
 
   let newState = rootReducer(state, action);
-  if (oldRouter) newState.router = oldRouter;
+  //if (oldRouter) newState.router = oldRouter;
 
   return newState;
 };

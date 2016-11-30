@@ -4,27 +4,27 @@ import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './shared/store';
-
+import { EffectsModule } from '@ngrx/effects';
+import { DBModule } from '@ngrx/db';
 import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { reducer } from './shared/store';
+
+const NGRX_IMPORTS = [
+  StoreModule.provideStore(reducer),
+  RouterStoreModule.connectRouter(),
+  StoreDevtoolsModule.instrumentOnlyWithExtension(),
+];
+
 @NgModule({
-  imports: [
-    BrowserModule,
-    HttpModule,
-    RouterModule.forRoot(routes),
-
-    StoreModule.provideStore(reducer),
-    RouterStoreModule.connectRouter(),
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
-
-    SharedModule.forRoot(),
+  imports: [BrowserModule, HttpModule, AppRoutingModule, SharedModule.forRoot(),
+    , ...NGRX_IMPORTS // ngrx
   ],
   declarations: [AppComponent],
   providers: [{
@@ -32,7 +32,5 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     useValue: '<%= APP_BASE %>'
   }],
   bootstrap: [AppComponent]
-
 })
-
 export class AppModule { }

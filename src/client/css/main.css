@@ -62,7 +62,10 @@ button:hover {
   background-color: #28739e;
 }
 
+/* TIC TAC TOE DOWN HERE: */
 
+ #fork {position:fixed;top:0;right:0;}
+ body {position:relative;}
 
 /* UNIVERSAL STYLES */
  .center {

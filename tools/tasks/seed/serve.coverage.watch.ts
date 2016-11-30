@@ -4,7 +4,7 @@ import * as browserSync from 'browser-sync';
 import Config from '../../config';
 
 export = () => {
-  let coverageFolder = Config.COVERAGE_DIR;
+  let coverageFolder = Config.COVERAGE_TS_DIR;
   let watchedFiles: string[] = [join(coverageFolder, '**')];
 
   // Serve files from the coverage of this project
@@ -13,6 +13,7 @@ export = () => {
       baseDir: './' + coverageFolder
     },
     port: Config.COVERAGE_PORT,
-    files: watchedFiles
+    files: watchedFiles,
+    logFileChanges: false
   });
 };
