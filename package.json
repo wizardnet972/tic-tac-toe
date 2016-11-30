@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Tic Tac Toe game with angular2 and ngrx",
   "repository": {
-    "url": "https://github.com/mgechev/angular-seed"
+    "url": "https://github.com/wizardnet972/tic-tac-toe"
   },
   "scripts": {
     "build.dev": "gulp build.dev --color --env-config dev",
