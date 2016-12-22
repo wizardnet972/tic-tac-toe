@@ -361,9 +361,9 @@ export class SeedConfig {
       '@angular/core/testing': 'node_modules/@angular/core/bundles/core-testing.umd.js',
       '@angular/http/testing': 'node_modules/@angular/http/bundles/http-testing.umd.js',
       '@angular/platform-browser/testing':
-        'node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js',
+      'node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js',
       '@angular/platform-browser-dynamic/testing':
-        'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
+      'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
 
       // ngrx
@@ -381,6 +381,7 @@ export class SeedConfig {
     packages: {
       'ngrx-store-logger': { main: 'dist/index', defaultExtension: 'js' },
       'ngrx-store-freeze': { main: 'dist/index', defaultExtension: 'js' },
+      'deep-freeze-strict': { main: 'index', defaultExtension: 'js' },
       'deep-freeze': { main: 'index', defaultExtension: 'js' }
     }
   };
@@ -408,6 +409,13 @@ export class SeedConfig {
       // You will have to include entries for each individual application in
       // `src/client`.
       [join(this.TMP_DIR, this.BOOTSTRAP_DIR, '*')]: `${this.TMP_DIR}/${this.BOOTSTRAP_DIR}/*`,
+      // ngrx
+      '@ngrx/core': 'node_modules/@ngrx/core/bundles/core.umd.js',
+      '@ngrx/store': 'node_modules/@ngrx/store/bundles/store.umd.js',
+      '@ngrx/effects': 'node_modules/@ngrx/effects/bundles/effects.umd.js',
+      '@ngrx/router-store': 'node_modules/@ngrx/router-store/bundles/router-store.umd.js',
+      '@ngrx/store-devtools': 'node_modules/@ngrx/store-devtools/bundles/store-devtools.umd.js',
+
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
@@ -452,7 +460,11 @@ export class SeedConfig {
       'rxjs': {
         main: 'Rx.js',
         defaultExtension: 'js'
-      }
+      },
+      'ngrx-store-logger': { main: 'dist/index', defaultExtension: 'js' },
+      'ngrx-store-freeze': { main: 'dist/index', defaultExtension: 'js' },
+      'deep-freeze-strict': { main: 'index', defaultExtension: 'js' },
+      'deep-freeze': { main: 'index', defaultExtension: 'js' }
     }
   };
 
