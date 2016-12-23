@@ -2,7 +2,7 @@
 
 Example application utilizing @angular2 and @ngrx libraries, showcasing common patterns and best practices. 
 
-**[Demo here](https://wizardnet972.github.io/memory-game-ngrx/)**
+**[Demo here](https://wizardnet972.github.io/tic-tac-toe/)**
 
 This app is a tic tac toe game. This application utilizes [@ngrx/store](https://github.com/ngrx/store) to manage 
 the state of the app; [@ngrx/effects](https://github.com/ngrx/effects) to isolate side effects. and more..
