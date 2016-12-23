@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import { type } from '../shared/util';
 
 export const ActionTypes = {
-  SET_CELL:   type('[Board] Set Cell'),
-  AI_TURN:    type('[Board] AI Turn'),
-  MY_TURN:    type('[Board] My Turn'),
+  SET_CELL: type('[Board] Set Cell'),
+  AI_TURN: type('[Board] AI Turn'),
+  MY_TURN: type('[Board] My Turn'),
   RESET_GAME: type('[Board] Reset Game'),
 };
 

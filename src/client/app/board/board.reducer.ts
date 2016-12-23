@@ -33,3 +33,5 @@ export function reducer(state = initialState, action: fromBoard.Actions): State 
             return state;
     }
 }
+
+export const getCells = (state: State) => state.cells;

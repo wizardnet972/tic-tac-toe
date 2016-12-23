@@ -13,6 +13,7 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/withLatestFrom';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 // ngrx
 import '@ngrx/core/add/operator/select';

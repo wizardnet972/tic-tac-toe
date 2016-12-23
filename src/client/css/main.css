@@ -1,3 +1,7 @@
+@font-face {
+    font-family: FromCartoonBlocks;
+    src: url(../assets/From_Cartoon_Blocks.ttf);
+}
 /* Reset */
 html,
 body,
@@ -18,6 +22,12 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  background: url(http://www.pageresource.com/wallpapers/wallpaper/wall-graffiti_85807.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 p {
@@ -80,15 +90,24 @@ button:hover {
 /* ELEMENT STYLES */
  h1, h4 {
     text-align: center;
-    font-family: sans-serif;
-    color: #666666;
+    font-family: 'FromCartoonBlocks';
+    color: #fff;
+    font-size:3rem;
+    margin-bottom:0;
     border: 0;
+    text-shadow: 1px 1px 1px #000;
+      -webkit-transform: rotate(-11deg);
+    -moz-transform: rotate(-11deg);
+    -o-transform: rotate(-11deg);
+    -ms-transform: rotate(-11deg);
+    transform: rotate(-11deg);
 }
 p {
     text-align: center;
-    font-family: sans-serif;
+    font-family: cursive;
     line-height: 16pt;
-    color: #666666;
+    color: #fff;
+    text-shadow: 1px 1px 1px red;
 }
 .button {
     margin-left:auto;
@@ -115,21 +134,23 @@ p {
     border-spacing:0;
     margin-left: -2px;
     margin-top: -2px;
+    background:url(../assets/board.png) no-repeat;
+    background-size:100%;
 }
 td {
     height: 116px;
     width: 116px;
     text-align: center;
-    font-family: sans-serif;
+    font-family: cursive;
     font-size: 40pt;
     border-collapse: collapse;
-    border: 2px solid #B9E9F0;
     text-transform: uppercase;
     color: #999999;
+    text-shadow: 1px 2px #000;
 }
 .x {
-    color: blue;
+    color:coral;
 }
 .o {
-    color: red;
+    color:white;
 }

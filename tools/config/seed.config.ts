@@ -382,7 +382,8 @@ export class SeedConfig {
       'ngrx-store-logger': { main: 'dist/index', defaultExtension: 'js' },
       'ngrx-store-freeze': { main: 'dist/index', defaultExtension: 'js' },
       'deep-freeze-strict': { main: 'index', defaultExtension: 'js' },
-      'deep-freeze': { main: 'index', defaultExtension: 'js' }
+      'deep-freeze': { main: 'index', defaultExtension: 'js' },
+      'reselect': { main: 'dist/reselect', defaultExtension: 'js' }
     }
   };
 
@@ -464,7 +465,8 @@ export class SeedConfig {
       'ngrx-store-logger': { main: 'dist/index', defaultExtension: 'js' },
       'ngrx-store-freeze': { main: 'dist/index', defaultExtension: 'js' },
       'deep-freeze-strict': { main: 'index', defaultExtension: 'js' },
-      'deep-freeze': { main: 'index', defaultExtension: 'js' }
+      'deep-freeze': { main: 'index', defaultExtension: 'js' },
+      'reselect': { main: 'dist/reselect', defaultExtension: 'js' }
     }
   };
 

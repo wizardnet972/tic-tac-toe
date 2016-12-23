@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { WinningModes } from '../../shared/services/winner.service';
 import { State } from '../../shared/store';
+import { getBoardCells, getWinner } from '../../app.store';
+
 import * as fromBoard from '../../board/board.actions';
 
 @Component({
@@ -13,25 +15,22 @@ import * as fromBoard from '../../board/board.actions';
 })
 export class TicTacToeComponent {
 
-  private cells: Observable<string[]>;
-  private turn: number = 0;
+  public cells$: Observable<string[]>;
 
   constructor(
     public store: Store<State>) {
 
-    //TODO: Selectors
-    this.cells = store.select(s => s.board.cells);
-    store.select(s => s.board.turn).subscribe(turn => this.turn = turn);
-    store.select(s => s.winning.winner)
+    this.cells$ = store.select(getBoardCells);
+
+    store.select(getWinner)
+      .distinctUntilChanged()
       .filter(winner => !!winner)
       .debounceTime(500)
-      .subscribe(this.winning);
+      .subscribe(winner => this.winning(winner));
   }
 
   update(cell: number) {
-    if (this.turn === 0) {
-      this.store.dispatch(new fromBoard.MyTurnAction({ in: cell }));
-    }
+    this.store.dispatch(new fromBoard.MyTurnAction({ in: cell }));
   }
 
   winning(winner: WinningModes) {

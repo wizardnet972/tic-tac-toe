@@ -1,30 +1,42 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OpaqueToken, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EffectsModule } from '@ngrx/effects';
+import { EffectsModule, Actions, mergeEffects } from '@ngrx/effects';
 import { TicTacToeComponent } from './tic-tac-toe.component';
 import { BoardComponent } from '../board/board.component';
 import { BoardEffects } from '../../board/board.effects';
 import { WinningEffects } from '../../winning/winning.effects';
 import { TicTacToeRoutingModule } from './tic-tac-toe-routing.module';
+import { EffectsHelper } from '../../shared/effects-helper.service';
 
-let effects = [
-    BoardEffects,
-    WinningEffects,
-];
+const EFFECTS = new OpaqueToken('@ngrx/effects');
 
-const COMPONENTS = [
+let components = [
     TicTacToeComponent,
     BoardComponent
 ];
 
-const IMPORTS = [
+let providers = [
+    Actions,
+    { provide: EFFECTS, useClass: BoardEffects, multi: true },
+    { provide: EFFECTS, useClass: WinningEffects, multi: true }
+];
+
+const imports = [
     CommonModule,
     TicTacToeRoutingModule,
-    effects.map(effect => EffectsModule.run(effect)),
-]
+];
 
 @NgModule({
-    imports: IMPORTS,
-    declarations: COMPONENTS
+    imports: imports,
+    declarations: components,
+    providers: providers
 })
-export default class TicTacToeModule { }
+export class TicTacToeModule {
+
+    constructor(
+        @Inject(EFFECTS) effects: any[],
+        effectsHelper: EffectsHelper) {
+
+        effectsHelper.add(effects);
+    }
+}

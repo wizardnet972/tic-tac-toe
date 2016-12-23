@@ -1,4 +1,6 @@
-<div id="fork"><a target="_blank" href="https://github.com/wizardnet972/tic-tac-toe"><img src="/assets/fork.png" alt="fork me!" /></a></div>
+<div id="fork">
+  <a target="_blank" href="https://github.com/wizardnet972/tic-tac-toe"><img src="/assets/fork.png" alt="fork me!" /></a>
+</div>
 
 <h1> TIC TAC TOE </h1>
 <h4> by WizardNet972 </h4>
@@ -9,4 +11,4 @@
   <br>Good luck!</p>
 <br>
 <br>
-<board [cells]="cells | async" (reset)="reset()" (cell)="update($event)"></board>
+<board [cells]="cells$ | async" (reset)="reset()" (cell)="update($event)"></board>

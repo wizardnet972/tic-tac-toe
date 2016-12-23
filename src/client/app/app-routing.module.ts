@@ -6,11 +6,8 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {
         path: '',
-        loadChildren: '/app/features/tic-tac-toe/tic-tac-toe.module'
+        loadChildren: '/app/features/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
       }
-      /* define app module routes here, e.g., to lazily load a module
-         (do not place feature module routes here, use an own -routing.module.ts in the feature instead)
-       */
     ])
   ],
   exports: [RouterModule]

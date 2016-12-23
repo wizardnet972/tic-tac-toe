@@ -37,3 +37,5 @@ export function reducer(state = initialState, action: winning.Actions): State {
             return state;
     }
 }
+
+export const getWinner = (state: State) => state.winner;

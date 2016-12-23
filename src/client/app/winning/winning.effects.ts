@@ -12,7 +12,8 @@ import * as fromBoard from '../board/board.actions';
 @Injectable()
 export class WinningEffects {
 
-    @Effect() checkWinning$ = this.actions$
+    @Effect()
+    checkWinning$ = this.actions$
         .ofType(fromWinning.ActionTypes.CHECK_WINNING)
         .withLatestFrom(this.store)
         .map(([, store]) => store.board)
