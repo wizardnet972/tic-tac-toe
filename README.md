@@ -1,13 +1,16 @@
-# Introduction
+# Tic Tac Toe Game
 
-Tic Tac Toe Game implementation follow by best practices of angular2 & @ngrx.
+Example application utilizing @angular2 and @ngrx libraries, showcasing common patterns and best practices. 
 
-# How to start
+**[Demo here](https://wizardnet972.github.io/memory-game-ngrx/)**
 
-**Note** that this project requires node v4.x.x or higher and npm 2.14.7.
+This app is a tic tac toe game. This application utilizes [@ngrx/store](https://github.com/ngrx/store) to manage 
+the state of the app; [@ngrx/effects](https://github.com/ngrx/effects) to isolate side effects. and more..
 
-In order to start the project use:
+Built with [angular2-ngrx-seed](https://github.com/wizardnet972/angular2-seed-ngrx)
+Built by [@wizardnet972](https://www.github.com/wizardnet972/).
 
+## Get Started
 ```bash
 git clone --depth 1 https://github.com/wizardnet972/tic-tac-toe.git
 cd tic-tac-toe
@@ -34,3 +37,8 @@ npm start -- --app foo
 npm start -- --app bar
 ```
 
+## Further help
+
+stay in touch :)
+
+check out my other projects in my profile [WizardNet972](https://github.com/wizardnet972/) or [Twitter](https://twitter.com/wizardnet972).
