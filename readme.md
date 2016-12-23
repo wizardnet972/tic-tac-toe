@@ -4,4 +4,4 @@ Demo here: [https://wizardnet972.github.io/tic-tac-toe/](https://wizardnet972.gi
 
 # Source 
 
-[https://github.com/wizardnet972/memory-game-ngrx](https://github.com/wizardnet972/memory-game-ngrx)
+[https://github.com/wizardnet972/tic-tac-toe](https://github.com/wizardnet972/tic-tac-toe)
