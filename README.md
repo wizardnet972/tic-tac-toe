@@ -4,6 +4,8 @@ Example application utilizing @angular2 and @ngrx libraries, showcasing common p
 
 **[Demo here](https://wizardnet972.github.io/tic-tac-toe/)**
 
+**[Pure JavaScript Version](https://goo.gl/vpzhVh)**
+
 This app is a tic tac toe game. This application utilizes [@ngrx/store](https://github.com/ngrx/store) to manage 
 the state of the app; [@ngrx/effects](https://github.com/ngrx/effects) to isolate side effects. and more..
 
