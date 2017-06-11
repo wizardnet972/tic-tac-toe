@@ -1,0 +1,25 @@
+<div id="board-outer" class="center">
+  <table id="board">
+    <tr>
+      <td data-cell="0" (click)="onCellClick($event)" class={{cells[0]}}>{{cells[0]}}</td>
+      <td data-cell="1" (click)="onCellClick($event)" class={{cells[1]}}>{{cells[1]}}</td>
+      <td data-cell="2" (click)="onCellClick($event)" class={{cells[2]}}>{{cells[2]}}</td>
+    </tr>
+    <tr>
+      <td data-cell="3" (click)="onCellClick($event)" class={{cells[3]}}>{{cells[3]}}</td>
+      <td data-cell="4" (click)="onCellClick($event)" class={{cells[4]}}>{{cells[4]}}</td>
+      <td data-cell="5" (click)="onCellClick($event)" class={{cells[5]}}>{{cells[5]}}</td>
+    </tr>
+    <tr>
+      <td data-cell="6" (click)="onCellClick($event)" class={{cells[6]}}>{{cells[6]}}</td>
+      <td data-cell="7" (click)="onCellClick($event)" class={{cells[7]}}>{{cells[7]}}</td>
+      <td data-cell="8" (click)="onCellClick($event)" class={{cells[8]}}>{{cells[8]}}</td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<div class="center button">
+  <button id="restart" (click)="reset.emit($event)">New game</button>
+</div>

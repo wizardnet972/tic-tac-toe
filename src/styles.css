@@ -1,0 +1,190 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*@font-face {
+  font-family: FromCartoonBlocks;
+  src: url(../assets/From_Cartoon_Blocks.ttf);
+}*/
+
+
+/* Reset */
+
+html,
+body,
+div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Box-sizing border-box */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Set up a default font and some padding to provide breathing room */
+
+body {
+  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('./assets/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+ul {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+input {
+  border: 1px solid #106cc8;
+  font-size: 14px;
+  height: 40px;
+  outline: none;
+  padding: 8px;
+}
+
+button {
+  background-color: #106cc8;
+  border-style: none;
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  padding: 8px 18px;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #28739e;
+}
+
+
+/* TIC TAC TOE DOWN HERE: */
+
+#fork {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+body {
+  position: relative;
+}
+
+
+/* UNIVERSAL STYLES */
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.italic {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+/* ELEMENT STYLES */
+
+h1,
+h4 {
+  text-align: center;
+  font-family: 'FromCartoonBlocks';
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 0;
+  border: 0;
+  text-shadow: 1px 1px 1px #000;
+  -webkit-transform: rotate(-11deg);
+  -moz-transform: rotate(-11deg);
+  -o-transform: rotate(-11deg);
+  -ms-transform: rotate(-11deg);
+  transform: rotate(-11deg);
+}
+
+p {
+  text-align: center;
+  font-family: cursive;
+  line-height: 16pt;
+  color: #fff;
+  text-shadow: 1px 1px 1px red;
+}
+
+.button {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#restart {
+  font-size: 12pt;
+  color: #666666;
+  background-color: #dedede;
+  padding: 5px 15px 5px 15px;
+}
+
+
+/* BOARD STYLES */
+
+#board-outer {
+  height: 350px;
+  width: 350px;
+  background-color: none;
+  overflow: hidden;
+}
+
+#board {
+  width: 354px;
+  height: 354px;
+  background-color: none;
+  border-spacing: 0;
+  margin-left: -2px;
+  margin-top: -2px;
+  background: url('./assets/board.png') no-repeat;
+  background-size: 100%;
+}
+
+td {
+  height: 116px;
+  width: 116px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 40pt;
+  border-collapse: collapse;
+  text-transform: uppercase;
+  color: #999999;
+  text-shadow: 1px 2px #000;
+}
+
+.x {
+  color: coral;
+}
+
+.o {
+  color: white;
+}
