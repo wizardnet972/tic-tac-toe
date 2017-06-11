@@ -12,6 +12,11 @@ import * as fromBoard from '../board/board.actions';
 @Injectable()
 export class WinningEffects {
 
+    constructor(
+        private store: Store<State>,
+        private actions$: Actions
+    ) { }
+    
     @Effect()
     checkWinning$ = this.actions$
         .ofType(fromWinning.ActionTypes.CHECK_WINNING)
@@ -35,9 +40,4 @@ export class WinningEffects {
 
             return empty(); // do nothing, cancel the effect, do not dispatch another action.
         });
-
-    constructor(
-        private store: Store<State>,
-        private actions$: Actions
-    ) { }
 }

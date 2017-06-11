@@ -2,17 +2,27 @@ import { compose } from '@ngrx/core/compose';
 import { storeLogger } from 'ngrx-store-logger';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
-
-import * as fromRouter from '@ngrx/router-store';
-import * as fromApp from './app.store';
 import { environment } from 'environments/environment';
+import { createSelector } from 'reselect';
 
-export interface State extends fromApp.State {
-  some: {};
+import * as fromBoard from './board/board.reducer';
+import * as fromWinning from './winning/winning.reducer';
 
+/* Selectors */
+export const getBoardState = (state: State) => state.board;
+export const getWinningState = (state: State) => state.winning;
+export const getBoardCells = createSelector(getBoardState, fromBoard.getCells);
+export const getWinner = createSelector(getWinningState, fromWinning.getWinner);
+
+export interface State {
+  board: fromBoard.State;
+  winning: fromWinning.State;
 }
 
-const reducers = Object.assign({}, fromApp.reducers);
+const reducers = {
+  board: fromBoard.reducer,
+  winning: fromWinning.reducer,
+};
 
 const developmentReducer = compose(storeFreeze, storeLogger(), combineReducers)(reducers);
 const productionReducer = combineReducers(reducers);
@@ -26,7 +36,6 @@ export function rootReducer(state: any, action: any) {
 }
 
 export function reducer(state: any, action: any) {
-
   if (action.type === 'RESET_STORE') {
     state = undefined;
   }
@@ -35,3 +44,6 @@ export function reducer(state: any, action: any) {
 
   return newState;
 };
+
+
+

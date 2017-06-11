@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { State } from 'app/shared/store';
-import { getBoardCells, getWinner } from 'app/shared/store/app.store';
+import { getBoardCells, getWinner } from '../../shared/store';
 import * as fromBoard from 'app/shared/store/board/board.actions';
 import { WinningModes } from 'app/shared/winner.service';
 

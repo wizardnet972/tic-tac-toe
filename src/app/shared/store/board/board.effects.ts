@@ -16,6 +16,11 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class BoardEffects {
 
+    constructor(
+        private store: Store<State>,
+        private actions$: Actions
+    ) { }
+
     @Effect()
     myTurn$ = this.actions$
         .ofType(fromBoard.ActionTypes.MY_TURN)
@@ -40,9 +45,4 @@ export class BoardEffects {
     resetGame$ = this.actions$
         .ofType(fromBoard.ActionTypes.RESET_GAME)
         .switchMap(() => of({ type: 'RESET_STORE' }));
-
-    constructor(
-        private store: Store<State>,
-        private actions$: Actions
-    ) { }
 }
