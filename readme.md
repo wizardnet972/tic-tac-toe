@@ -1,4 +1,4 @@
-# Memory game
+# Tic Tac Toe
 
 Demo here: [https://wizardnet972.github.io/tic-tac-toe/](https://wizardnet972.github.io/tic-tac-toe/)
 
